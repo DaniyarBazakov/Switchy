@@ -1,9 +1,9 @@
-DROP TABLE IF EXISTS Step CASCADE;
-CREATE TABLE Step (
-    step_id INT PRIMARY KEY AUTO_INCREMENT,
+DROP TABLE IF EXISTS steps CASCADE;
+CREATE TABLE steps (
+    step_id SERIAL PRIMARY KEY,
     roadmap_id INT,
     title VARCHAR(255),
     description TEXT,
-    order INT,
-    FOREIGN KEY (roadmap_id) REFERENCES Roadmap(roadmap_id)
+    step_order INT,
+    FOREIGN KEY (roadmap_id) REFERENCES roadmaps(roadmap_id)
 );

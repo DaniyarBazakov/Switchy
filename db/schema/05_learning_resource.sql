@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS LearningResource CASCADE;
-CREATE TABLE LearningResource (
-    resource_id INT PRIMARY KEY AUTO_INCREMENT,
+DROP TABLE IF EXISTS learningResources CASCADE;
+CREATE TABLE learningResources (
+    resource_id SERIAL PRIMARY KEY,
     step_id INT,
     type VARCHAR(255),
     title VARCHAR(255),
     url VARCHAR(255),
     provider VARCHAR(255),
-    FOREIGN KEY (step_id) REFERENCES Step(step_id)
+    FOREIGN KEY (step_id) REFERENCES steps(step_id)
 );

@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS User CASCADE;
-CREATE TABLE User (
-    user_id INT PRIMARY KEY AUTO_INCREMENT,
+DROP TABLE IF EXISTS users CASCADE;
+CREATE TABLE users (
+    user_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     email VARCHAR(255),
     password VARCHAR(255),
@@ -10,6 +10,6 @@ CREATE TABLE User (
     experience VARCHAR(255),
     location VARCHAR(255),
     social_media_link VARCHAR(255),
-    image BLOB,
+    image BYTEA,
     bio VARCHAR(255)
 );
