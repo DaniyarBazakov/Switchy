@@ -1,0 +1,7 @@
+INSERT INTO users (name, email, password, current_field, desired_field, skills, experience, location, social_media_link, bio)
+VALUES
+    ('Alice Johnson', 'alice@example.com', 'password123', 'Marketing', 'Product Management', 'Communication, Teamwork', '5 years', 'New York, NY', 'https://linkedin.com/in/alicejohnson', 'Passionate about transitioning to product management.'),
+    ('Bob Smith', 'bob@example.com', 'securepassword', 'Software Engineering', 'Data Science', 'Python, SQL, Machine Learning', '3 years', 'San Francisco, CA', 'https://linkedin.com/in/bsmith', 'Looking to break into data science after several years of software engineering.'),
+    ('Catherine Lee', 'catherine@example.com', 'mypassword', 'Graphic Design', 'UX Design', 'Adobe Photoshop, Illustrator, Figma', '4 years', 'Toronto, ON', 'https://linkedin.com/in/catherinelee', 'Creative professional interested in UX and human-centered design.'),
+    ('David Kim', 'david@example.com', 'password456', 'Finance', 'Business Analysis', 'Financial Modeling, Data Analysis', '7 years', 'Chicago, IL', 'https://linkedin.com/in/davidkim', 'Experienced finance professional interested in business analysis roles.'),
+    ('Ella Rodriguez', 'ella@example.com', 'password789', 'Teaching', 'EdTech', 'Curriculum Development, Instruction', '6 years', 'Miami, FL', 'https://linkedin.com/in/ellarodriguez', 'Educator passionate about using technology to improve learning experiences.');
