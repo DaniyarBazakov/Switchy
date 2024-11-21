@@ -2,43 +2,12 @@ import React, { useEffect, useState } from "react";
 //import Navbar from "../components/Navbar";
 import { Link } from 'react-router-dom';
 import '../styles/Home.css'
-
+import useFetchPosts from "../hooks/useFetchPosts";
 const Home = () =>{
-  const [users, setUsers] = useState([]);
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  // Fetch user posts from an API (or use a placeholder)
+  const {posts} = useFetchPosts();
 
 
-  useEffect(() => {
-    fetch('http://localhost:3001/api/users')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setUsers(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
-  }, []);
-
-  useEffect(() => {
-    // Replace this with an actual API call to fetch posts
-    const fetchPosts = async () => {
-      const response = await fetch('http://localhost:3001/api/posts'); // Replace with your actual API endpoint
-      const data = await response.json();
-      setPosts(data);
-    };
-
-    fetchPosts();
-  }, []);
+  
 
   return(
 
