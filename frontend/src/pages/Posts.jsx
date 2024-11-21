@@ -1,50 +1,87 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import Navbar from '../components/Navbar';
+import '../styles/Posts.css';
 
+const PostForm = () => {
+    const [formData, setFormData] = useState({
+        user_id: '',
+        content: '',
+        field: '',
+    });
 
-const Posts = () => {
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
 
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-   // Fetch posts when component mounts
-   useEffect(() => {
-    fetch('http://localhost:3001/api/posts')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:3001/api/posts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log('Post created:', data);
+            alert('Post successfully created!');
+            setFormData({ user_id: '', content: '', field: '' }); // Reset form
+        } catch (error) {
+            console.error('Error creating post:', error);
+            alert('Failed to create post.');
         }
-        return response.json();
-      })
-      .then((data) => {
-        setPosts(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
-  }, []);
+    };
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+    return (<div>
+      <Navbar/>
+        <form onSubmit={handleSubmit}>
+            <div>
+                <label htmlFor="user_id">User ID:</label>
+                <input
+                    type="number"
+                    id="user_id"
+                    name="user_id"
+                    value={formData.user_id}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+            <div>
+                <label htmlFor="content">Content:</label>
+                <textarea
+                    id="content"
+                    name="content"
+                    value={formData.content}
+                    onChange={handleChange}
+                    required
+                ></textarea>
+            </div>
+            <div>
+                <label htmlFor="field">Field:</label>
+                <input
+                    type="text"
+                    id="field"
+                    name="field"
+                    value={formData.field}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+            <button type="submit">Create Post</button>
+        </form>
+        </div>
+    );
+};
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  return(<div>
-    <h1>Posts List</h1>
-      <ul>
-        {posts.map((post, index) => (
-          <li key={index}>
-            <strong>User ID:</strong> {post.user_id} <br />
-            <strong>Content:</strong> {post.content}
-          </li>
-        ))}
-      </ul>
-    </div>)
-
-
-}
-export default Posts;
+export default PostForm;
