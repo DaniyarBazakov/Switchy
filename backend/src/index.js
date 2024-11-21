@@ -10,8 +10,10 @@ app.use(cors());
 app.use(express.json());
 
 // Use the routes
-app.use('/api/users', usersRouter);
 app.use('/api/posts', postsRouter);
+
+//user profile routes
+app.use('/api/users', usersRouter);
 
 // Start the Express server
 const PORT = process.env.PORT || 3001;
