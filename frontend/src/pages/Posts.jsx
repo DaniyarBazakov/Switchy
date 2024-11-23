@@ -46,17 +46,7 @@ const PostForm = () => {
     return (<div>
       <Navbar/>
         <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="user_id">User ID:</label>
-                <input
-                    type="number"
-                    id="user_id"
-                    name="user_id"
-                    value={formData.user_id}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
+            
             <div>
                 <label htmlFor="content">Content:</label>
                 <textarea
