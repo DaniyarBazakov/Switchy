@@ -7,7 +7,7 @@ const Signup = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/user");
   };
 
   return (
@@ -32,7 +32,7 @@ const Signup = () => {
       <div className="login-right">
         <h2>Welcome to Switchy</h2>
         <p>Already have an account?</p>
-        <a href="/login" className="btn sign-up-btn">
+        <a href="/user" className="btn sign-up-btn">
           Login
         </a>
       </div>

@@ -7,10 +7,8 @@
   border-radius: 10px;
 }
 
-.navbar-logo {
-  font-size: 3rem;
-  color: white;
-  font-weight: bold;
+.navbar-logo img{
+  size:10px;
 }
 
 .navbar-links {

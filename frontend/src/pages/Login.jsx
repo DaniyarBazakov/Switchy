@@ -4,10 +4,11 @@ import "../styles/Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
-
+  
+  
   const handleLogin = (e) => {
     e.preventDefault();
-    navigate("/"); // Redirect to home page
+    navigate("/user"); // Redirect to home page
   };
 
   return (

@@ -21,7 +21,7 @@
   list-style: none;
 }
 .header .btn {
-  display: block;
+  
   background: linear-gradient(135deg, #f54b64, #f78361);
   
 }
@@ -44,9 +44,22 @@
   font-size: 36px;
   margin-bottom: 20px;
 }
-
+.cta-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .cta-buttons .btn {
-  padding: 10px 20px;
+  display:flex;
+  
+  border-radius: 50%;
+  width: 180px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  
+  cursor: pointer;
+  
   background: linear-gradient(135deg, #f54b64, #f78361);
   color: white;
   border-radius: 5px;

@@ -1,3 +1,15 @@
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+.post-container {
+  padding: 100px;
+  display: flex;
+  
+  
+}
 form {
   max-width: 500px;
   margin: 2rem auto;
@@ -49,7 +61,7 @@ button {
   display: inline-block;
   width: 100%;
   padding: 0.8rem;
-  background-color: #007bff;
+  background: linear-gradient(135deg, #f54b64, #f78361);
   color: #fff;
   font-size: 1rem;
   font-weight: bold;
