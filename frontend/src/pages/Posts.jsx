@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import '../styles/Posts.css';
 import useFetchPosts from '../hooks/useFetchPosts';
 
 const PostForm = () => {
     const { posts } = useFetchPosts();
+    console.log(posts);
     const [formData, setFormData] = useState({
         user_id: '',
         content: '',
@@ -111,9 +113,11 @@ const PostForm = () => {
                     {posts.length > 0 ? (
                         posts.slice(0, 5).map((post) => (
                             <div className="post" key={post.id}>
-                                <h3>{post.title}</h3>
                                 <p>{post.content}</p>
-                                <span>Posted by: {post.user}</span>
+                                {/* Link to the user's profile */}
+                                <span>
+                                    Posted by: <Link to={`/user/${post.user_id}`}>{post.user}</Link>
+                                </span>
                             </div>
                         ))
                     ) : (
