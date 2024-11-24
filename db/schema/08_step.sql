@@ -5,5 +5,6 @@ CREATE TABLE steps (
     title VARCHAR(255),
     description TEXT,
     step_order INT,
+    completed BOOLEAN,
     FOREIGN KEY (roadmap_id) REFERENCES roadmaps(roadmap_id)
 );

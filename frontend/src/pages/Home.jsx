@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 //import Navbar from "../components/Navbar";
+
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
 import useFetchPosts from "../hooks/useFetchPosts";
