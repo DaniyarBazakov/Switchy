@@ -6,6 +6,7 @@ const usersRouter = require('./routes/userRoute');
 const postsRouter = require('./routes/postRoute');
 const roadmapRouter = require('./routes/roadmapRoute');
 const stepRouter = require('./routes/stepRoute');
+const authRouter = require('./routes/authRoutes');
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -17,6 +18,7 @@ app.use('/api/steps',stepRouter);
 
 //user profile routes
 app.use('/api/users', usersRouter);
+app.use('/api', authRouter);
 
 // Start the Express server
 const PORT = process.env.PORT || 3001;
