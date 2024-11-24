@@ -3,10 +3,10 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
-import useFetchPosts from "../hooks/useFetchPosts";
+
 //import Navbar from "../components/Navbar";
 const Home = () => {
-  const { posts } = useFetchPosts();
+ 
   
 
   return (
@@ -96,23 +96,7 @@ const Home = () => {
         </div>
       </section> */}
 
-      {/* User Posts Section */}
-      <section className="user-posts">
-  <h2>What Our Users Are Saying</h2>
-  <div className="posts">
-    {posts.length > 0 ? (
-      posts.slice(0, 5).map((post) => ( // Display only the first 5 posts
-        <div className="post" key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.content}</p>
-          <span>Posted by: {post.user}</span>
-        </div>
-      ))
-    ) : (
-      <p>No posts available.</p>
-    )}
-  </div>
-</section>
+      
 
 
       {/* Call to Action */}

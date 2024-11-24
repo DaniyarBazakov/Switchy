@@ -8,7 +8,7 @@ const Login = () => {
   
   const handleLogin = (e) => {
     e.preventDefault();
-    navigate("/user"); // Redirect to home page
+    navigate("/posts"); // Redirect to home page
   };
 
   return (

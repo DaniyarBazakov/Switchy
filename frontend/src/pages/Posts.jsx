@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import '../styles/Posts.css';
-
+import useFetchPosts from "../hooks/useFetchPosts";
 const PostForm = () => {
+    const { posts } = useFetchPosts();
     const [formData, setFormData] = useState({
         user_id: '',
         content: '',
@@ -82,7 +83,27 @@ const PostForm = () => {
             <button type="submit">Create Post</button>
         </form>
         </div>
+
+{/* User Posts Section */}
+<section className="user-posts">
+  <h2>What Our Users Are Saying</h2>
+  <div className="posts">
+    {posts.length > 0 ? (
+      posts.slice(0, 5).map((post) => ( // Display only the first 5 posts
+        <div className="post" key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.content}</p>
+          <span>Posted by: {post.user}</span>
         </div>
+      ))
+    ) : (
+      <p>No posts available.</p>
+    )}
+  </div>
+</section>
+
+        </div>
+
     );
 };
 
