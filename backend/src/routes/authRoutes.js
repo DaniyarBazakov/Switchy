@@ -22,8 +22,11 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ message: 'Invalid email or password' });
     }
 
-    // Login successful, send a success response (you can send user details or a session token here if desired)
-    res.status(200).json({ message: 'Login successful', user: { userId: user.user_id, email: user.email, name: user.name } });
+    // Return user data
+    res.status(200).json({ 
+      message: 'Login successful', 
+      user: { userId: user.user_id, email: user.email, name: user.name }
+    });
 
   } catch (err) {
     console.error('Error during login:', err);
