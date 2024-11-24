@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import '../styles/Posts.css';
-import useFetchPosts from "../hooks/useFetchPosts";
+import useFetchPosts from '../hooks/useFetchPosts';
+
 const PostForm = () => {
     const { posts } = useFetchPosts();
     const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ const PostForm = () => {
         content: '',
         field: '',
     });
+    const [isFormVisible, setIsFormVisible] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -44,66 +46,82 @@ const PostForm = () => {
         }
     };
 
-    return (<div>
-      <Navbar/>
-      <div className='post-container'>
-        <form onSubmit={handleSubmit}>
+    const toggleFormVisibility = () => {
+        setIsFormVisible((prev) => !prev);
+    };
+
+    return (
         <div>
-                <label htmlFor="user_id">User ID:</label>
-                <input
-                    type="number"
-                    id="user_id"
-                    name="user_id"
-                    value={formData.user_id}
-                    onChange={handleChange}
-                    required
-                />
+            <div> <Navbar /></div>
+           
+            <div className="post-container">
+                <button
+                    onClick={toggleFormVisibility}
+                    className="toggle-button"
+                >
+                    {isFormVisible ? 'Close Post Form' : 'Create Post'}
+                </button>
+                <div
+                    className={`collapsible-form ${
+                        isFormVisible ? 'open' : ''
+                    }`}
+                >
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <label htmlFor="user_id">User ID:</label>
+                            <input
+                                type="number"
+                                id="user_id"
+                                name="user_id"
+                                value={formData.user_id}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="content">Content:</label>
+                            <textarea
+                                id="content"
+                                name="content"
+                                value={formData.content}
+                                onChange={handleChange}
+                                required
+                            ></textarea>
+                        </div>
+                        <div>
+                            <label htmlFor="field">Field:</label>
+                            <input
+                                type="text"
+                                id="field"
+                                name="field"
+                                value={formData.field}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <button type="submit">Create Post</button>
+                    </form>
+                </div>
             </div>
-            <div>
-                <label htmlFor="content">Content:</label>
-                <textarea
-                    id="content"
-                    name="content"
-                    value={formData.content}
-                    onChange={handleChange}
-                    required
-                ></textarea>
-            </div>
-            <div>
-                <label htmlFor="field">Field:</label>
-                <input
-                    type="text"
-                    id="field"
-                    name="field"
-                    value={formData.field}
-                    onChange={handleChange}
-                    required
-                />
-            </div>
-            <button type="submit">Create Post</button>
-        </form>
-        </div>
 
-{/* User Posts Section */}
-<section className="user-posts">
-  <h2>What Our Users Are Saying</h2>
-  <div className="posts">
-    {posts.length > 0 ? (
-      posts.slice(0, 5).map((post) => ( // Display only the first 5 posts
-        <div className="post" key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.content}</p>
-          <span>Posted by: {post.user}</span>
+            {/* User Posts Section */}
+            <section className="user-posts">
+                <h2>What Our Users Are Saying</h2>
+                <div className="posts">
+                    {posts.length > 0 ? (
+                        posts.slice(0, 5).map((post) => (
+                            <div className="post" key={post.id}>
+                                <h3>{post.title}</h3>
+                                <p>{post.content}</p>
+                                <span>Posted by: {post.user}</span>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No posts available.</p>
+                    )}
+                </div>
+            </section>
         </div>
-      ))
-    ) : (
-      <p>No posts available.</p>
-    )}
-  </div>
-</section>
-
-        </div>
-
     );
 };
 
