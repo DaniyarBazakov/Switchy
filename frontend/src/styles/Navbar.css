@@ -1,14 +1,14 @@
 .navbar {
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  background-color: #5b5252;
-  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #f54b64, #f78361);
+  border-radius: 10px;
 }
 
 .navbar-logo {
   font-size: 3rem;
-  
   color: white;
   font-weight: bold;
 }
@@ -17,6 +17,7 @@
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  padding: 10px;
 }
 
 .navbar-links li {
@@ -25,11 +26,12 @@
 
 .navbar-links a {
   text-decoration: none;
-  color: white;
-  font-size: 2rem;
+  color: rgb(10, 10, 10);
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .navbar-links a:hover {
   text-decoration: underline;
-  color: #ff9800;
+  color: #f04b4b;
 }

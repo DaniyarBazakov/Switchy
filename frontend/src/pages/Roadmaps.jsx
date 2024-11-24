@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 
 const Roadmaps = () =>{
-  return(<div>Roadmaps
+  return(<div>
     <Navbar/>
   </div>)
 }

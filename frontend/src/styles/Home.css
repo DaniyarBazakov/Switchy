@@ -1,6 +1,7 @@
 .homepage {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  font-family: "Raleway", sans-serif;
+  
+  background-color: #f7f7f7;
 }
 
 .header {
@@ -19,7 +20,11 @@
   display: flex;
   list-style: none;
 }
-
+.header .btn {
+  display: block;
+  background: linear-gradient(135deg, #f54b64, #f78361);
+  
+}
 .header nav ul li {
   margin: 0 15px;
 }
@@ -42,7 +47,7 @@
 
 .cta-buttons .btn {
   padding: 10px 20px;
-  background-color: #007bff;
+  background: linear-gradient(135deg, #f54b64, #f78361);
   color: white;
   border-radius: 5px;
   text-decoration: none;
@@ -50,7 +55,7 @@
 }
 
 .cta-buttons .btn:hover {
-  background-color: #0056b3;
+  background: linear-gradient(135deg, #f54b64, #f78361);
 }
 
 .how-it-works {
@@ -66,37 +71,52 @@
 .how-it-works .step {
   width: 22%;
   padding: 20px;
-  background: #f8f9fa;
+  background: linear-gradient(135deg, #f54b64, #f78361);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.features {
+.Why {
   padding: 40px 0;
   text-align: center;
 }
 
+.features {
+  display: flex;
+  padding: 40px 0;
+  text-align: center;
+  justify-content: space-around;
+}
+
 .features .feature {
   width: 22%;
-  display: inline-block;
+  
   margin: 20px;
+  background: linear-gradient(135deg, #f54b64, hsl(14, 90%, 67%));
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .user-posts {
   padding: 40px 0;
-  background-color: #f9f9f9;
+  
 }
 
 .user-posts .post {
-  background-color: white;
+  
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  border: 1px solid #0f0e0e;
+  box-shadow: 0 4px 8px rgba(161, 64, 64, 0.1);
+  font-size: 18px;
+  border-color: #0d0c0c;
+  font-weight: bolder;
+  
 }
 
 .footer {
-  background: #333;
+  background: linear-gradient(135deg, #f54b64, #f78361);
   color: white;
   padding: 20px 0;
   text-align: center;

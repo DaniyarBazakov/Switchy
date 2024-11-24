@@ -3,29 +3,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
 import useFetchPosts from "../hooks/useFetchPosts";
+import Navbar from "../components/Navbar";
 const Home = () => {
   const { posts } = useFetchPosts();
 
   return (
     <div className="homepage">
       {/* Header */}
-      <header className="header">
-        <div className="logo">Switchy</div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/login" className="btn">
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link to="/signup" className="btn">
-                Sign Up
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Navbar/>
 
       {/* Hero Section */}
       <section className="hero">
@@ -43,9 +28,7 @@ const Home = () => {
             <Link to="/signup" className="btn">
               Start Your Journey
             </Link>
-            <Link to="/login" className="btn">
-              Login
-            </Link>
+            
           </div>
         </div>
       </section>
@@ -83,8 +66,10 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section className="features">
-        <h2>Why Choose Switchy?</h2>
+      
+      {/*<section className="Why">
+      <h2>Why Choose Switchy?</h2>
+      <div className="features">
         <div className="feature">
           <h3>Personalized Career Roadmaps</h3>
           <p>Career paths designed specifically for your goals.</p>
@@ -106,37 +91,34 @@ const Home = () => {
             Access personalized learning content to help you switch careers.
           </p>
         </div>
-      </section>
+        </div>
+      </section> */}
 
       {/* User Posts Section */}
       <section className="user-posts">
-        <h2>What Our Users Are Saying</h2>
-        <div className="posts">
-          {posts.length > 0 ? (
-            posts.map((post) => (
-              <div className="post" key={post.id}>
-                <h3>{post.title}</h3>
-                <p>{post.content}</p>
-                <span>Posted by: {post.user}</span>
-              </div>
-            ))
-          ) : (
-            <p>No posts available.</p>
-          )}
+  <h2>What Our Users Are Saying</h2>
+  <div className="posts">
+    {posts.length > 0 ? (
+      posts.slice(0, 5).map((post) => ( // Display only the first 5 posts
+        <div className="post" key={post.id}>
+          <h3>{post.title}</h3>
+          <p>{post.content}</p>
+          <span>Posted by: {post.user}</span>
         </div>
-      </section>
+      ))
+    ) : (
+      <p>No posts available.</p>
+    )}
+  </div>
+</section>
+
 
       {/* Call to Action */}
       <section className="cta">
         <h2>Ready to Switch Careers?</h2>
         <p>Join Switchy today and start your personalized roadmap!</p>
         <div className="cta-buttons">
-          <Link to="/signup" className="btn">
-            Sign Up
-          </Link>
-          <Link to="/login" className="btn">
-            Login
-          </Link>
+          
         </div>
       </section>
 
