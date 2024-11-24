@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import { Link } from 'react-router-dom';
-import '../styles/Navbar.css'; // For styling
+import { Link } from "react-router-dom";
+import "../styles/Navbar.css"; // For styling
 
 const Navbar = () => {
   return (
@@ -10,7 +10,6 @@ const Navbar = () => {
         <Link to="/">Switchy</Link>
       </div>
       <ul className="navbar-links">
-        
         <li>
           <Link to="/user">User Profile</Link>
         </li>
@@ -21,12 +20,11 @@ const Navbar = () => {
           <Link to="/posts">Posts</Link>
         </li>
         <li>
-          <Link to="/logout">Logout</Link>
+          <Link to="/login">Logout</Link>
         </li>
       </ul>
     </nav>
   );
-  
 };
 
 export default Navbar;
