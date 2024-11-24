@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
-import '../styles/Posts.css';
+import '../styles/posts.css';
 
 const PostForm = () => {
     const [formData, setFormData] = useState({
@@ -46,7 +46,7 @@ const PostForm = () => {
     return (<div>
       <Navbar/>
         <form onSubmit={handleSubmit}>
-            <div>
+        <div>
                 <label htmlFor="user_id">User ID:</label>
                 <input
                     type="number"
