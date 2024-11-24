@@ -3,22 +3,57 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f7f7f7;
+  
 }
+
 .post-container {
-  padding: 100px;
-  display: flex;
-  
-  
+  padding: 50px;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
 }
+
+.toggle-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  width: auto;
+}
+
+.toggle-button:hover {
+  background-color: #0056b3;
+}
+
+.collapsible-form {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0;
+  border: none;
+}
+
+.collapsible-form.open {
+  max-height: 500px; /* Approximate height when expanded */
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  margin-top: 10px;
+}
+
 form {
-  max-width: 500px;
-  margin: 2rem auto;
+  margin: 0 auto;
   padding: 1.5rem;
   background-color: #f9f9f9;
-  border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
 }
 
 form div {
@@ -39,7 +74,6 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-  font-family: inherit;
   color: #333;
   box-sizing: border-box;
   transition: border-color 0.2s ease;
@@ -78,4 +112,35 @@ button:hover {
 button:focus {
   outline: none;
   box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+.user-posts {
+  padding: 20px;
+  margin: 20px auto;
+  
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-posts .posts .post {
+  margin-bottom: 1rem;
+  padding: 10px;
+  
+}
+
+.user-posts .posts .post h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #007bff;
+}
+
+.user-posts .posts .post p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.user-posts .posts .post span {
+  font-size: 0.9rem;
+  color: #999;
 }
