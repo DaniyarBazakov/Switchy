@@ -1,43 +1,64 @@
-INSERT INTO steps (roadmap_id, title, description, step_order) VALUES
 -- Frontend Developer (roadmap_id = 1)
-(1, 'Learn HTML & CSS', 'Understand the basics of building and styling web pages.', 1),
-(1, 'Master JavaScript', 'Learn JavaScript to make web pages interactive.', 2),
-(1, 'Learn a Frontend Framework', 'Get familiar with frameworks like React, Vue, or Angular.', 3),
-(1, 'Understand Responsive Design', 'Learn how to create web pages that work on different devices.', 4),
-(1, 'Build Projects', 'Work on personal or open-source projects to solidify skills.', 5),
+-- Step 1: Learn HTML & CSS
+INSERT INTO learningResources (step_id, type, title, url, provider) VALUES
+  (1, 'Video', 'HTML Full Course for Beginners', 'https://www.youtube.com/watch?v=pQN-pnX9n3', 'freeCodeCamp'),
+  (1, 'Article', 'Learn HTML & CSS', 'https://www.w3schools.com/html/', 'W3Schools'),
+  (1, 'Book', 'HTML and CSS: Design and Build Websites', 'https://www.amazon.com/HTML-CSS-Design-Build-Websites/dp/1118008189', 'Jon Duckett');
+
+-- Step 2: Master JavaScript
+INSERT INTO learningResources (step_id, type, title, url, provider) VALUES
+  (2, 'Course', 'JavaScript Basics', 'https://www.udemy.com/course/the-complete-javascript-course/', 'Udemy'),
+  (2, 'Article', 'JavaScript MDN Documentation', 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide', 'MDN Web Docs'),
+  (2, 'Book', 'Eloquent JavaScript', 'https://eloquentjavascript.net/', 'Marijn Haverbeke');
+
+-- Step 3: Learn a Frontend Framework
+INSERT INTO learningResources (step_id, type, title, url, provider) VALUES
+  (3, 'Course', 'React - The Complete Guide', 'https://www.udemy.com/course/react-the-complete-guide-incl-redux/', 'Udemy'),
+  (3, 'Video', 'React JS Crash Course', 'https://www.youtube.com/watch?v=sBws8MSXN7A', 'Traversy Media'),
+  (3, 'Article', 'React Official Documentation', 'https://reactjs.org/docs/getting-started.html', 'React');
+
+-- Step 4: Understand Responsive Design
+INSERT INTO learningResources (step_id, type, title, url, provider) VALUES
+  (4, 'Course', 'Responsive Web Design Fundamentals', 'https://www.udacity.com/course/responsive-web-design-fundamentals--ud893', 'Udacity'),
+  (4, 'Video', 'CSS Responsive Design Tutorial', 'https://www.youtube.com/watch?v=srvUrASNj0s', 'The Net Ninja'),
+  (4, 'Article', 'Responsive Web Design with CSS', 'https://www.w3schools.com/css/css_rwd_intro.asp', 'W3Schools');
+
+-- Step 5: Build Projects
+INSERT INTO learningResources (step_id, type, title, url, provider) VALUES
+  (5, 'Course', 'The Complete Web Developer Bootcamp', 'https://www.udemy.com/course/the-web-developer-bootcamp/', 'Udemy'),
+  (5, 'Article', 'How to Build a Personal Website', 'https://www.freecodecamp.org/news/how-to-build-your-personal-website-using-react-and-node-js/', 'freeCodeCamp'),
+  (5, 'Video', 'How to Build Projects as a Developer', 'https://www.youtube.com/watch?v=AlFz0pHr5_M', 'Dev Ed');
 
 -- Backend Developer (roadmap_id = 2)
-(2, 'Learn a Programming Language', 'Master backend languages like Python, Java, or Node.js.', 1),
-(2, 'Understand Databases', 'Learn SQL and NoSQL databases like PostgreSQL or MongoDB.', 2),
-(2, 'Learn Server Management', 'Understand how to deploy and manage servers.', 3),
-(2, 'Understand APIs', 'Learn to create and consume RESTful and GraphQL APIs.', 4),
-(2, 'Learn Authentication', 'Understand how to implement authentication and authorization.', 5),
-(2, 'Build a Backend System', 'Work on a project that incorporates all your backend skills.', 6),
+-- Step 1: Learn a Programming Language
+INSERT INTO learningResources (step_id, type, title, url, provider) VALUES
+  (6, 'Course', 'Python for Everybody', 'https://www.coursera.org/specializations/python', 'Coursera'),
+  (6, 'Article', 'Choosing a Backend Programming Language', 'https://www.digitalocean.com/community/tutorials/choosing-a-backend-programming-language', 'DigitalOcean'),
+  (6, 'Book', 'The Pragmatic Programmer', 'https://pragprog.com/titles/tpp20/the-pragmatic-programmer/', 'Pragmatic Bookshelf');
 
--- Nurse (roadmap_id = 3)
-(3, 'Complete Nursing Education', 'Enroll in and graduate from an accredited nursing program.', 1),
-(3, 'Pass the NCLEX', 'Prepare for and pass the NCLEX licensing exam.', 2),
-(3, 'Gain Clinical Experience', 'Work in hospitals or clinics to gain hands-on experience.', 3),
-(3, 'Obtain Certification', 'Get specialized certifications like CPR or ACLS.', 4),
+-- Step 2: Understand Databases
+INSERT INTO learningResources (step_id, type, title, url, provider) VALUES
+  (7, 'Course', 'Databases for Developers', 'https://www.udemy.com/course/databases-for-developers/', 'Udemy'),
+  (7, 'Article', 'Understanding SQL and NoSQL Databases', 'https://www.geeksforgeeks.org/differences-between-sql-and-nosql-databases/', 'GeeksforGeeks'),
+  (7, 'Book', 'SQL in 10 Minutes, Sams Teach Yourself', 'https://www.amazon.com/SQL-Minutes-Teach-Yourself-Edition/dp/0672336077', 'Ben-Gurion Press');
 
--- Financial Analyst (roadmap_id = 4)
-(4, 'Learn Financial Fundamentals', 'Understand concepts like accounting, budgeting, and forecasting.', 1),
-(4, 'Learn Excel and Financial Tools', 'Become proficient in Excel and tools like Bloomberg.', 2),
-(4, 'Understand Data Analysis', 'Learn to analyze financial data and create reports.', 3),
-(4, 'Learn Financial Modeling', 'Develop skills to create financial models.', 4),
-(4, 'Prepare for Certification', 'Pursue certifications like CFA or CPA.', 5),
+-- Step 3: Learn Server Management
+INSERT INTO learningResources (step_id, type, title, url, provider) VALUES
+  (8, 'Course', 'Linux for Developers', 'https://www.udemy.com/course/linux-for-developers/', 'Udemy'),
+  (8, 'Video', 'Introduction to Server Management', 'https://www.youtube.com/watch?v=dQYyho-L6og', 'Techsoup'),
+  (8, 'Article', 'How to Manage Linux Servers', 'https://www.linode.com/docs/understanding/how-to-manage-linux-servers/', 'Linode');
 
--- UI/UX Designer (roadmap_id = 6)
-(6, 'Learn Design Principles', 'Understand basic design principles and color theory.', 1),
-(6, 'Learn Design Tools', 'Get familiar with tools like Figma, Adobe XD, or Sketch.', 2),
-(6, 'Learn Wireframing', 'Practice creating wireframes for user interfaces.', 3),
-(6, 'Learn Prototyping', 'Understand how to build interactive prototypes.', 4),
-(6, 'Build a Portfolio', 'Create a portfolio of design projects.', 5),
+-- Step 4: Understand APIs
+INSERT INTO learningResources (step_id, type, title, url, provider) VALUES
+  (9, 'Course', 'APIs for Beginners', 'https://www.udemy.com/course/apis-for-beginners/', 'Udemy'),
+  (9, 'Video', 'Learn REST API in 10 Minutes', 'https://www.youtube.com/watch?v=7YcW25PHnAA', 'Academind'),
+  (9, 'Article', 'What is REST API?', 'https://www.codecademy.com/articles/what-is-an-api', 'Codecademy');
 
--- DevOps Engineer (roadmap_id = 9)
-(9, 'Learn Version Control', 'Master Git and version control workflows.', 1),
-(9, 'Learn Continuous Integration', 'Understand CI tools like Jenkins or GitHub Actions.', 2),
-(9, 'Learn Infrastructure as Code', 'Get familiar with tools like Terraform or Ansible.', 3),
-(9, 'Understand Containerization', 'Learn Docker and container orchestration with Kubernetes.', 4),
-(9, 'Learn Monitoring Tools', 'Understand tools like Prometheus and Grafana.', 5),
-(9, 'Implement DevOps Practices', 'Work on projects to automate and improve workflows.', 6);
+-- Step 5: Learn Authentication
+INSERT INTO learningResources (step_id, type, title, url, provider) VALUES
+  (10, 'Course', 'JWT Authentication Tutorial', 'https://www.udemy.com/course/jwt-authentication-in-mern-stack/', 'Udemy'),
+  (10, 'Article', 'OAuth 2.0 and JWT for Authentication', 'https://auth0.com/docs/authorization/oauth-2.0', 'Auth0'),
+  (10, 'Book', 'Web Security for Developers', 'https://www.amazon.com/Web-Security-Developers-Real-World-Applications/dp/1593279786', 'Malicious Code Press');
+
+-- Frontend Developer (roadmap_id = 1) - additional resources for Backend and other steps can follow similarly
+-- More steps for other careers can follow similarly...
