@@ -26,11 +26,16 @@ const Login = () => {
       const data = await response.json();
       console.log('Login successful:', data);
 
-      // Redirect the user to the posts page after a successful login
+      // Store user data in localStorage
+      localStorage.setItem('user', JSON.stringify(data.user));
+
+      console.log('User data stored in localStorage:', localStorage.getItem('user'));
+
+      // Redirect the user to the posts page or home page
       navigate("/posts");
     } catch (error) {
       console.error('Error logging in:', error);
-      alert('Invalid email or password'); // Notify the user about the failure
+      alert('Invalid email or password');
     }
   };
 

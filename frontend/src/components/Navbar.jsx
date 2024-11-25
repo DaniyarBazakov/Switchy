@@ -4,6 +4,8 @@ import "../styles/Navbar.css"; // For styling
 
 
 const Navbar = () => {
+  // Get logged-in user data from localStorage
+  const loggedInUser = JSON.parse(localStorage.getItem('user'));
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -11,7 +13,7 @@ const Navbar = () => {
       </div>
       <ul className="navbar-links">
         <li>
-          <Link to="/user">User Profile</Link>
+          <Link to={`/user/${loggedInUser.userId}`}>User Profile</Link>
         </li>
         <li>
           <Link to="/roadmaps">Roadmaps</Link>
