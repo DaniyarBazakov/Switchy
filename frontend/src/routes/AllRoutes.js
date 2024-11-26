@@ -7,6 +7,7 @@ import Posts from "../pages/Posts";
 import Logout from "../pages/Logout";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
+import SkillsTest from "../pages/SkillsTest"; // Import the SkillsTest component
 
 const AllRoutes = () => {
   return (
@@ -16,8 +17,10 @@ const AllRoutes = () => {
       <Route path="/roadmaps" element={<Roadmaps />} />
       <Route path="/posts" element={<Posts />} />
       <Route path="/logout" element={<Logout />} />
-      <Route path="/login" element={<Login />} /> {}
-      <Route path="/signup" element={<Signup />} /> {}
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/skills-test" element={<SkillsTest />} />{" "}
+      {/* New SkillsTest route */}
     </Routes>
   );
 };

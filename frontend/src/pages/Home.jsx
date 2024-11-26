@@ -1,19 +1,10 @@
 import React from "react";
-//import Navbar from "../components/Navbar";
-
 import { Link } from "react-router-dom";
 import "../styles/Home.css";
 
-//import Navbar from "../components/Navbar";
 const Home = () => {
- 
-  
-
   return (
     <div className="homepage">
-      {/* Header */}
-      
-
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
@@ -30,7 +21,9 @@ const Home = () => {
             <Link to="/signup" className="btn">
               Start Your Journey
             </Link>
-            
+            <Link to="/skills-test" className="btn skills-test-btn">
+              Take Skills Test
+            </Link>
           </div>
         </div>
       </section>
@@ -67,45 +60,10 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      
-      {/*<section className="Why">
-      <h2>Why Choose Switchy?</h2>
-      <div className="features">
-        <div className="feature">
-          <h3>Personalized Career Roadmaps</h3>
-          <p>Career paths designed specifically for your goals.</p>
-        </div>
-        <div className="feature">
-          <h3>Skill-Based Quizzes</h3>
-          <p>
-            Take quizzes to assess your skills and receive tailored
-            recommendations.
-          </p>
-        </div>
-        <div className="feature">
-          <h3>Mentorship and Community</h3>
-          <p>Connect with mentors and peers in your desired industry.</p>
-        </div>
-        <div className="feature">
-          <h3>Curated Learning Resources</h3>
-          <p>
-            Access personalized learning content to help you switch careers.
-          </p>
-        </div>
-        </div>
-      </section> */}
-
-      
-
-
       {/* Call to Action */}
       <section className="cta">
         <h2>Ready to Switch Careers?</h2>
         <p>Join Switchy today and start your personalized roadmap!</p>
-        <div className="cta-buttons">
-          
-        </div>
       </section>
 
       {/* Footer */}
@@ -116,7 +74,6 @@ const Home = () => {
           <Link to="/terms">Terms of Service</Link>
           <Link to="/contact">Contact</Link>
         </div>
-        <div className="social-icons">{/* Add social media links/icons */}</div>
       </footer>
     </div>
   );
