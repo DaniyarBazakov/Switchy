@@ -1,0 +1,145 @@
+/* Container */
+.skills-test {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #83a4d4, #b6fbff);
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Question Section */
+.question-container {
+  text-align: center;
+  max-width: 900px; /* Further increased width */
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker for more contrast */
+  padding: 50px; /* Larger padding for more space inside the container */
+  border-radius: 20px; /* More rounded corners for a modern feel */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for prominence */
+  transform: scale(1.05); /* Subtle scaling effect */
+  transition: all 0.3s ease; /* Smooth transition for any hover effects */
+}
+
+.question-container:hover {
+  transform: scale(1.1); /* Slight enlargement on hover for emphasis */
+}
+
+.question {
+  font-size: 24px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Option Buttons */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.option-button {
+  font-size: 18px;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.option-button:hover {
+  transform: scale(1.05);
+  background: #f54b64;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.results-container {
+  text-align: center;
+  max-width: 900px; /* Match the size of the question container */
+  background: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.results-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.result-item {
+  font-size: 20px;
+  margin: 10px 0;
+  animation: slideIn 0.6s ease-in-out;
+}
+
+/* Restart Button */
+.restart-button {
+  font-size: 18px;
+  padding: 15px 30px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #f54b64;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.restart-button:hover {
+  transform: scale(1.05);
+  background: #f54b64;
+  color: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.start-journey-button {
+  font-size: 18px;
+  padding: 15px 30px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #4caf50;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.start-journey-button:hover {
+  transform: scale(1.05);
+  background: #45a049;
+}
