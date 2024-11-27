@@ -7,6 +7,7 @@ const postsRouter = require('./routes/postRoute');
 const roadmapRouter = require('./routes/roadmapRoute');
 const stepRouter = require('./routes/stepRoute');
 const authRouter = require('./routes/authRoutes');
+const signupRouter = require('./routes/signupRoute');
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use('/api/posts', postsRouter);
 app.use('/api/roadmaps',roadmapRouter);
 app.use('/api/steps',stepRouter);
+app.use('/api/signup', signupRouter);
 
 //user profile routes
 app.use('/api/users', usersRouter);
