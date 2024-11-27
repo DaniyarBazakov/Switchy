@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
     yearsExperience,
     location,
     socialMediaLink,
-    image,
+    profileImageUrl,
     bio,
     previousField,
     postContent,
@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
     // Insert user into users table
     const userInsertQuery = `
       INSERT INTO users
-      (name, email, password, current_field, desired_field, skills, experience, location, social_media_link, image, bio)
+      (name, email, password, current_field, desired_field, skills, experience, location, social_media_link, profile_image_url, bio)
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
       RETURNING *;
     `;
@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
       yearsExperience,
       location,
       socialMediaLink,
-      image,
+      profileImageUrl,
       bio,
     ];
     const userResult = await client.query(userInsertQuery, userInsertValues);
@@ -63,7 +63,19 @@ router.post('/', async (req, res) => {
     // Respond with the full user data
     res.status(201).json({
       message: 'User and post created successfully',
-      user: { userId: user.user_id, email: user.email, name: user.name }
+      user: {
+        userId: user.user_id,
+        name,
+        email,
+        currentField,
+        desiredField,
+        skills,
+        experience: yearsExperience,
+        location,
+        socialMediaLink,
+        profileImageUrl,
+        bio,
+      },
     });
 
   } catch (error) {
