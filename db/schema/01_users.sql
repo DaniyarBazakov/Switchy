@@ -10,6 +10,6 @@ CREATE TABLE users (
     experience VARCHAR(255),
     location VARCHAR(255),
     social_media_link VARCHAR(255),
-    image BYTEA,
+    profile_image_url VARCHAR(255),
     bio VARCHAR(255)
 );

@@ -44,7 +44,7 @@ const UserProfile = () => {
       <div className="user-profile">
         <div className="profile-header">
           <img
-            src={`data:image/jpeg;base64,${user.image}`}
+            src={user.profile_image_url ? user.profile_image_url : 'https://via.placeholder.com/150'}
             alt={`${user.name}'s profile`}
             className="profile-image"
           />

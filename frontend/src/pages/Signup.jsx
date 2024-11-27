@@ -17,7 +17,7 @@ const Signup = () => {
     yearsExperience: "",
     location: "",
     socialMediaLink: "",
-    image: "",
+    profileImageUrl: "", // Updated from 'image' to 'profileImageUrl'
     bio: "",
     postContent: "",
   });
@@ -31,6 +31,7 @@ const Signup = () => {
     }));
   };
 
+  // Step logic handlers
   const handleSignup = (e) => {
     e.preventDefault();
     setStep(2); // Move to the next step to gather additional information
@@ -84,9 +85,6 @@ const Signup = () => {
       setSignupMessage("An error occurred. Please try again later.");
     }
   };
-  
-  
-  
 
   const handlePrev = () => {
     setStep((prevStep) => prevStep - 1); // Move to the previous step
@@ -234,12 +232,12 @@ const Signup = () => {
             <h2>We need a few more details to complete your signup (Part 3).</h2>
             <form onSubmit={handleUserDetailsPart3}>
               <label>
-                Image
+                Profile Image URL
                 <input
                   type="text"
-                  name="image"
+                  name="profileImageUrl" // Updated from 'image' to 'profileImageUrl'
                   placeholder="Enter a link to your profile image"
-                  value={formData.image}
+                  value={formData.profileImageUrl}
                   onChange={handleInputChange}
                 />
               </label>
