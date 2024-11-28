@@ -123,6 +123,11 @@ form input {
   margin-top: 30px;
 }
 
+.prev-btn {
+  background: linear-gradient(135deg, #f54b64, #f78361);
+  margin-top: 30px;
+}
+
 .sign-up-btn {
   background-color: white;
   color: #f54b64;

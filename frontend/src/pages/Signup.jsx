@@ -47,8 +47,13 @@ const Signup = () => {
     setStep(4); // Move to the next step for additional user details
   };
 
+  // Update this function to set previousField value if it hasn't been filled
   const handleUserDetailsPart3 = (e) => {
     e.preventDefault();
+    setFormData((prevData) => ({
+      ...prevData,
+      previousField: prevData.previousField || prevData.currentField,
+    }));
     setStep(5); // Move to the final step for post information
   };
 
@@ -63,14 +68,14 @@ const Signup = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (response.ok) {
         const responseData = await response.json(); // Get response data, including user object
         const { user } = responseData;
-  
+
         // Store the user object in local storage (same as login process)
         localStorage.setItem("user", JSON.stringify(user));
-  
+
         // Navigate to the posts page after successful signup
         navigate("/posts");
       } else {
@@ -87,7 +92,7 @@ const Signup = () => {
   };
 
   const handlePrev = () => {
-    setStep((prevStep) => prevStep - 1); // Move to the previous step
+    setStep((prevStep) => prevStep - 1); 
   };
 
   return (
@@ -235,7 +240,7 @@ const Signup = () => {
                 Profile Image URL
                 <input
                   type="text"
-                  name="profileImageUrl" // Updated from 'image' to 'profileImageUrl'
+                  name="profileImageUrl" 
                   placeholder="Enter a link to your profile image"
                   value={formData.profileImageUrl}
                   onChange={handleInputChange}
