@@ -5,6 +5,11 @@ import "../styles/Home.css";
 const Home = () => {
   return (
     <div className="homepage">
+      {/* Header Section */}
+      <header className="header">
+        <h1 className="site-title">Switchy</h1>
+      </header>
+
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
@@ -21,7 +26,7 @@ const Home = () => {
             <Link to="/signup" className="btn">
               Start Your Journey
             </Link>
-            <Link to="/skills-test" className="btn skills-test-btn">
+            <Link to="/skills-test" className="btn btn-secondary">
               Take Skills Test
             </Link>
           </div>
@@ -33,6 +38,7 @@ const Home = () => {
         <h2>How It Works</h2>
         <div className="steps">
           <div className="step">
+            <span className="emoji">🗺️</span>
             <h3>Explore Career Roadmaps</h3>
             <p>
               Browse various industry-specific career paths tailored to your
@@ -40,10 +46,12 @@ const Home = () => {
             </p>
           </div>
           <div className="step">
+            <span className="emoji">📊</span>
             <h3>Take Skill Assessment Quizzes</h3>
             <p>Assess your current skills and receive tailored feedback.</p>
           </div>
           <div className="step">
+            <span className="emoji">🤝</span>
             <h3>Connect with Mentors & Peers</h3>
             <p>
               Join a community of industry professionals to gain insights and
@@ -51,6 +59,7 @@ const Home = () => {
             </p>
           </div>
           <div className="step">
+            <span className="emoji">📚</span>
             <h3>Access Curated Learning Resources</h3>
             <p>
               Get personalized recommendations for courses, articles, and
