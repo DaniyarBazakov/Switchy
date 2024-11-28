@@ -1,36 +1,52 @@
-import React from "react";
-import Navbar from "../components/Navbar";
+import React, { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar';
 import RoadmapDropdown from '../components/RoadmapDropdown';
-import StepsList from '../components/StepList';
+import StepList from '../components/StepList';
 import ProgressBar from '../components/ProgressBar';
-import useRoadmaps from '../hooks/useRoadmaps';
-import useSteps from '../hooks/useSteps';
+import useSteps from '../hooks/useSteps'; // Assuming this hook fetches steps
+import '../styles/Roadmap.css';
 
+const Roadmaps = () => {
+  const [selectedRoadmapId, setSelectedRoadmapId] = useState(null);
+  const [completedSteps, setCompletedSteps] = useState({});
+  const { steps, loading } = useSteps(selectedRoadmapId);
 
-const Roadmaps = () =>{
-  
-  const { roadmaps, selectedRoadmap, selectRoadmap } = useRoadmaps();
-  const { steps, completedSteps, fetchSteps, updateStepCompletion } = useSteps();
-
-  const handleRoadmapSelect = (roadmap) => {
-    selectRoadmap(roadmap);
-    fetchSteps(roadmap.roadmap_id);
+  const handleRoadmapSelect = (roadmapId) => {
+    setSelectedRoadmapId(roadmapId);
+    setCompletedSteps({}); // Reset steps when a new roadmap is selected
   };
 
+  const handleStepCompletion = (stepId) => {
+    setCompletedSteps((prev) => ({
+      ...prev,
+      [stepId]: !prev[stepId],
+    }));
+  };
+
+  useEffect(() => {
+    
+  }, [completedSteps]);
+
   return (
-    <div className="app-container">
-      <Navbar/>
-      <h1>Roadmaps</h1>
-      <RoadmapDropdown roadmaps={roadmaps} onSelect={handleRoadmapSelect} />
-      {selectedRoadmap && (
-        <>
-          <h2>{selectedRoadmap.role} in {selectedRoadmap.industry}</h2>
-          <ProgressBar total={steps.length} completed={completedSteps} />
-          <StepsList steps={steps} onComplete={updateStepCompletion} />
-        </>
-      )}
+    <div className="roadmaps-container">
+      <Navbar />
+      <div className="content">
+        <div className="drp-step">
+          <RoadmapDropdown onRoadmapSelect={handleRoadmapSelect} />
+          {selectedRoadmapId && !loading && (
+            <>
+              <ProgressBar steps={steps} completedSteps={completedSteps} />
+              <StepList
+                roadmapId={selectedRoadmapId}
+                completedSteps={completedSteps}
+                onStepCompletion={handleStepCompletion}
+              />
+            </>
+          )}
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default Roadmaps;

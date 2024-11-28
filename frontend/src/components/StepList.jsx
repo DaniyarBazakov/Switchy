@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
+import useSteps from '../hooks/useSteps'; // Custom hook for fetching steps for a selected roadmap
+import StepDetails from './StepDetails';
+import '../styles/Roadmap.css';
 
-const StepsList = ({ steps, onComplete }) => {
+const StepList = ({ roadmapId, completedSteps, onStepCompletion }) => {
+  const { steps, loading, error } = useSteps(roadmapId);
+  const [activeStepId, setActiveStepId] = useState(null);
+
+  const handleStepClick = (stepId) => {
+    setActiveStepId(activeStepId === stepId ? null : stepId);
+  };
+
+  if (loading) return <p>Loading steps...</p>;
+  if (error) return <p>Error loading steps: {error.message}</p>;
+
   return (
-    <ul>
+    <div className="step-list">
       {steps.map((step) => (
-        <li key={step.step_id}>
-          <input
-            type="checkbox"
-            checked={step.completed}
-            onChange={(e) => onComplete(step.step_id, e.target.checked)}
-          />
-          {step.title}: {step.description}
-        </li>
+        <div className="step" key={step.step_id}>
+          <button onClick={() => handleStepClick(step.step_id)}>
+            {step.title}
+          </button>
+          {activeStepId === step.step_id && (
+            <div>
+              <StepDetails stepId={step.step_id} />
+              <button
+                className={`complete-btn ${completedSteps[step.step_id] ? 'completed' : ''}`}
+                onClick={() => onStepCompletion(step.step_id)}
+              >
+                {completedSteps[step.step_id] ? 'Undo Completion' : 'Mark as Complete'}
+              </button>
+            </div>
+          )}
+        </div>
       ))}
-    </ul>
+    </div>
   );
 };
 
-export default StepsList;
+export default StepList;
