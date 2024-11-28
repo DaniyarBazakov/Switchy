@@ -113,7 +113,7 @@ const SkillsTest = () => {
           </button>
           <button
             className="start-journey-button"
-            onClick={() => navigate("/login")}
+            onClick={() => navigate("/signup")}
           >
             Start Your Journey
           </button>

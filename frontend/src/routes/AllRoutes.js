@@ -7,7 +7,7 @@ import Posts from "../pages/Posts";
 import Logout from "../pages/Logout";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
-import SkillsTest from "../pages/SkillsTest"; // Import the SkillsTest component
+import SkillsTest from "../pages/SkillsTest";
 
 const AllRoutes = () => {
   return (

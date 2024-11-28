@@ -1,135 +1,161 @@
+/* General Styles */
+body,
 .homepage {
   font-family: "Raleway", sans-serif;
-  
-  background-color: #f7f7f7;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-}
-
-.header .logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.header nav ul {
-  display: flex;
-  list-style: none;
-}
-.header .btn {
-  
-  background: linear-gradient(135deg, #f54b64, #f78361);
-  
-}
-.header nav ul li {
-  margin: 0 15px;
-}
-
-.header nav ul li a {
-  text-decoration: none;
+  margin: 0;
+  padding: 0;
   color: #333;
+  background: #f0f4f8;
 }
 
-.hero {
-  background: #f4f4f9;
-  padding: 60px 20px;
+/* Header Section */
+.header {
+  background: transparent;
   text-align: center;
+  padding: 20px 0;
+}
+
+.site-title {
+  font-size: 64px;
+  font-weight: 700;
+  color: #f54b64;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  margin: 0;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #83a4d4, #b6fbff);
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size: 48px;
   margin-bottom: 20px;
+  animation: fadeIn 1.2s ease-in-out;
 }
-.cta-buttons{
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* CTA Buttons */
+.cta-buttons {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 15px;
 }
+
 .cta-buttons .btn {
-  display:flex;
-  
-  border-radius: 50%;
-  width: 180px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  
-  cursor: pointer;
-  
-  background: linear-gradient(135deg, #f54b64, #f78361);
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #f54b64;
+  border: none;
+  border-radius: 25px;
   color: white;
-  border-radius: 5px;
   text-decoration: none;
-  margin: 10px;
+  transition: all 0.3s ease;
+  width: 200px;
+  text-align: center;
+}
+
+.cta-buttons .btn-secondary {
+  background: #4caf50;
 }
 
 .cta-buttons .btn:hover {
-  background: linear-gradient(135deg, #f54b64, #f78361);
+  background: #e43e3e;
 }
 
+/* How It Works Section */
 .how-it-works {
-  padding: 40px 0;
+  padding: 80px 20px;
+  background: #fff;
   text-align: center;
 }
 
-.how-it-works .steps {
-  display: flex;
-  justify-content: space-around;
+.how-it-works h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
 }
 
-.how-it-works .step {
-  width: 22%;
-  padding: 20px;
+.steps {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.step {
   background: linear-gradient(135deg, #f54b64, #f78361);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.Why {
-  padding: 40px 0;
+  width: 280px;
+  padding: 40px 20px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  animation: fadeInUp 0.8s ease-in-out;
 }
 
-.features {
+/* Emoji Styling */
+.step .emoji {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.step h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 16px;
+}
+
+/* Call to Action Section */
+.cta {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f4f4f9;
   display: flex;
-  padding: 40px 0;
-  text-align: center;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.features .feature {
-  width: 22%;
-  
-  margin: 20px;
-  background: linear-gradient(135deg, #f54b64, hsl(14, 90%, 67%));
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.user-posts {
-  padding: 40px 0;
-  
-}
-
-.user-posts .post {
-  
-  padding: 20px;
+.cta h2 {
+  font-size: 36px;
   margin-bottom: 20px;
-  border-radius: 10px;
-  border: 1px solid #0f0e0e;
-  box-shadow: 0 4px 8px rgba(161, 64, 64, 0.1);
-  font-size: 18px;
-  border-color: #0d0c0c;
-  font-weight: bolder;
-  
 }
 
+.cta p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.cta .btn-large {
+  padding: 15px 50px;
+  font-size: 20px;
+  background: #f54b64;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta .btn-large:hover {
+  background: #e43e3e;
+}
+
+/* Footer */
 .footer {
-  background: linear-gradient(135deg, #f54b64, #f78361);
+  background: #333;
   color: white;
   padding: 20px 0;
   text-align: center;
@@ -141,6 +167,29 @@
   margin: 0 10px;
 }
 
-.footer .social-icons {
-  margin-top: 10px;
+.footer .footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
