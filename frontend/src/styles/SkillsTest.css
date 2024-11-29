@@ -1,6 +1,6 @@
 /* Container */
 .skills-test {
-  font-family: "Arial", sans-serif;
+  font-family: "Raleway", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,6 +96,7 @@
   background: #f54b64;
   color: white;
   transition: all 0.3s ease;
+  margin-left: 10px;
 }
 
 .restart-button:hover {
@@ -137,6 +138,7 @@
   background: #4caf50;
   color: white;
   transition: all 0.3s ease;
+  margin-left: 10px;
 }
 
 .start-journey-button:hover {
