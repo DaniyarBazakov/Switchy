@@ -16,6 +16,26 @@ const PostForm = () => {
     field: "",
   });
   const [isFormVisible, setIsFormVisible] = useState(false);
+  const [fields, setFields] = useState([]);
+  const [selectedField, setSelectedField] = useState("");
+
+  // Fetch unique fields for dropdown
+  useEffect(() => {
+    const fetchFields = async () => {
+      try {
+        const response = await fetch("http://localhost:3001/api/posts/fields");
+        if (!response.ok) {
+          throw new Error("Failed to fetch fields");
+        }
+        const data = await response.json();
+        setFields(data);
+      } catch (error) {
+        console.error("Error fetching fields:", error.message);
+      }
+    };
+
+    fetchFields();
+  }, []);
 
   useEffect(() => {
     if (paramUserId) {
@@ -82,9 +102,13 @@ const PostForm = () => {
     }
   };
 
-  const sortedPosts = posts.sort(
-    (a, b) => new Date(b.created_at) - new Date(a.created_at)
-  );
+  const sortedPosts = posts
+    .filter((post) => !selectedField || post.field === selectedField)
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+  const handleFieldFilterChange = (e) => {
+    setSelectedField(e.target.value);
+  };
 
   return (
     <div>
@@ -127,19 +151,33 @@ const PostForm = () => {
         )}
       </div>
 
+      <div className="filter-container">
+        <label htmlFor="fieldFilter">Filter by Field:</label>
+        <select
+          id="fieldFilter"
+          value={selectedField}
+          onChange={handleFieldFilterChange}
+        >
+          <option value="">All Fields</option>
+          {fields.map((field, index) => (
+            <option key={index} value={field}>
+              {field}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <section className="user-posts">
         <h2>Recent Posts</h2>
         <div className="posts">
           {sortedPosts.length > 0 ? (
-            sortedPosts
-              .slice(0, 5)
-              .map((post) => (
-                <PostCard
-                  key={post.id}
-                  post={post}
-                  fetchUserDetails={fetchUserDetails}
-                />
-              ))
+            sortedPosts.map((post) => (
+              <PostCard
+                key={post.post_id}
+                post={post}
+                fetchUserDetails={fetchUserDetails}
+              />
+            ))
           ) : (
             <p>No posts available.</p>
           )}
