@@ -40,4 +40,27 @@ router.get('/', async (req, res) => {
     res.status(500).send('Server error');
   }
 });
+
+//Fetch Posts By ID
+router.get('/:id', async (req, res) => {
+  const userId = req.params.id;
+  try {
+    const result = await pool.query(`
+      SELECT 
+        posts.post_id, 
+        posts.created_at, 
+        posts.content, 
+        posts.field, 
+        posts.user_id,
+        users.name AS user 
+      FROM posts 
+      JOIN users ON posts.user_id = users.user_id where posts.user_id = $1
+      ORDER BY posts.created_at DESC
+    `, [userId]);
+    res.json(result.rows);
+  } catch (err) {
+    console.error('Error querying the database:', err);
+    res.status(500).send('Server error');
+  }
+});
 module.exports = router;
