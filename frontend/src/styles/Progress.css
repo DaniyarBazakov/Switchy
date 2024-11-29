@@ -1,9 +1,4 @@
-.app-container {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-.progress-bar {
+.progress-bar-container {
   width: 100%;
   background-color: #e0e0e0;
   border-radius: 8px;
@@ -11,10 +6,15 @@
   margin: 10px 0;
 }
 
-.progress {
+.progress-bar {
   height: 20px;
-  background-color: #f54b64;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.progress-bar-container p {
   text-align: center;
-  color: #fff;
-  line-height: 20px;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #555;
 }

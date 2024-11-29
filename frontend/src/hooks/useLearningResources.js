@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
 
-const useSteps = (roadmapId) => {
-  const [steps, setSteps] = useState([]);
+const useLearningResources = (stepId) => {
+  const [learningResources, setLearningResources] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (roadmapId) {
-      fetch(`http://localhost:3001/api/roadmaps/${roadmapId}/steps`)
+    if (stepId) {
+      fetch(`http://localhost:3001/api/steps/${stepId}/resources`)
         .then((response) => response.json())
         .then((data) => {
-          setSteps(data);
+          setLearningResources(data);
           setLoading(false);
         })
         .catch((err) => {
@@ -18,9 +18,9 @@ const useSteps = (roadmapId) => {
           setLoading(false);
         });
     }
-  }, [roadmapId]);
+  }, [stepId]);
 
-  return { steps, loading, error };
+  return { learningResources, loading, error };
 };
 
-export default useSteps;
+export default useLearningResources;

@@ -2,6 +2,21 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db_connection');
 
+router.get('/:step_id/resources', async (req, res) => {
+  const { step_id} = req.params;
+  console.log(`Fetching steps for steps ID: ${step_id}`);
+  try {
+    const result = await pool.query(
+      'SELECT * FROM learningResources WHERE step_id = $1 ',
+      [step_id]
+    );
+    res.json(result.rows);
+  } catch (err) {
+    console.error(`Error fetching resources for step ${step_id}:`, err);
+    res.status(500).json({ error: 'Failed to fetch steps' });
+  }
+});
+
 
 
 
