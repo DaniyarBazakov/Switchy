@@ -21,8 +21,10 @@ router.post('/', async (req, res) => {
 
 // Get all posts
 router.get('/', async (req, res) => {
+  const { field } = req.query;
+
   try {
-    const result = await pool.query(`
+    let query = `
       SELECT 
         posts.post_id, 
         posts.created_at, 
@@ -32,14 +34,35 @@ router.get('/', async (req, res) => {
         users.name AS user 
       FROM posts 
       JOIN users ON posts.user_id = users.user_id
-      ORDER BY posts.created_at DESC
-    `);
+    `;
+    const values = [];
+
+    if (field) {
+      query += ' WHERE posts.field = $1';
+      values.push(field);
+    }
+
+    query += ' ORDER BY posts.created_at DESC';
+    const result = await pool.query(query, values);
     res.json(result.rows);
   } catch (err) {
-    console.error('Error querying the database:', err);
+    console.error('Error querying the database:', err.message);
     res.status(500).send('Server error');
   }
 });
+
+// Endpoint to fetch distinct fields
+router.get('/fields', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT DISTINCT field FROM posts');
+    const fields = result.rows.map(row => row.field);
+    res.json(fields);
+  } catch (error) {
+    console.error('Error fetching distinct fields:', error.message);
+    res.status(500).json({ error: 'Failed to fetch fields' });
+  }
+});
+
 
 //Fetch Posts By ID
 router.get('/:id', async (req, res) => {
