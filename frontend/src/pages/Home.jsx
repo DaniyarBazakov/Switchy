@@ -36,8 +36,8 @@ const Home = () => {
       {/* How It Works Section */}
       <section className="how-it-works">
         <h2>How It Works</h2>
-        <div className="steps">
-          <div className="step">
+        <div className="information">
+          <div className="info-card">
             <span className="emoji">🗺️</span>
             <h3>Explore Career Roadmaps</h3>
             <p>
@@ -45,12 +45,12 @@ const Home = () => {
               goals.
             </p>
           </div>
-          <div className="step">
+          <div className="info-card">
             <span className="emoji">📊</span>
             <h3>Take Skill Assessment Quizzes</h3>
             <p>Assess your current skills and receive tailored feedback.</p>
           </div>
-          <div className="step">
+          <div className="info-card">
             <span className="emoji">🤝</span>
             <h3>Connect with Mentors & Peers</h3>
             <p>
@@ -58,7 +58,7 @@ const Home = () => {
               guidance.
             </p>
           </div>
-          <div className="step">
+          <div className="info-card">
             <span className="emoji">📚</span>
             <h3>Access Curated Learning Resources</h3>
             <p>
@@ -73,6 +73,9 @@ const Home = () => {
       <section className="cta">
         <h2>Ready to Switch Careers?</h2>
         <p>Join Switchy today and start your personalized roadmap!</p>
+        <Link to="/signup" className="btn-large">
+          Get Started Now
+        </Link>
       </section>
 
       {/* Footer */}

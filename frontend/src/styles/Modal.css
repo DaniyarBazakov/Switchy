@@ -1,55 +1,49 @@
-/* Modal Overlay */
-.modal-overlay{
-background-color: white;
-  
-  position:fixed;
-  top: 55%;
-  
-  
-  height:400px;
-  width: 600px;
-  right:0;
-  
-  
-  border-radius: 12px;
-}
-/* Modal Content */
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 5px;
-  color:black;
-  box-sizing: border-box; /* Include padding in width/height calculation */
-  text-align: center;
-  overflow-y: auto; /* Allow content to scroll if needed */
+/* Modal.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-/* Close Button */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px; /* Fixed width */
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 1010; /* Make sure the modal content is above the overlay */
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #555;
+}
+
 .close-modal {
-  background-color: #f44336; /* Red background */
+  background-color: #dc3545;
   color: white;
-  padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 8px 16px;
   cursor: pointer;
-  margin-top: 10px;
+  font-size: 14px;
+  margin-top: 20px;
 }
 
 .close-modal:hover {
-  background-color: #e53935; /* Darker red on hover */
-}
-
-/* Optional additional styling for modal content when modal is open */
-.modal-open {
-  animation: modalFadeIn 0.3s ease-in-out;
-}
-
-/* Keyframe for smooth fade-in animation */
-@keyframes modalFadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  background-color: #c82333;
 }

@@ -1,0 +1,78 @@
+/* StepList.css */
+.step-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the steps */
+  gap: 20px; /* Space between steps */
+  margin-top: 30px;
+  width: 100%;
+  max-width: 800px; /* Limit the width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px; /* Make steps longer */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add shadow for visual depth */
+  transition: box-shadow 0.3s ease;
+}
+
+.step:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Hover effect */
+}
+
+.step button {
+  padding: 12px 18px;
+  background-color: #f04b4b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%; /* Button stretches to full width */
+}
+
+.step button:hover {
+  background-color: #f78361;
+}
+
+.complete-btn {
+  padding: 8px 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+}
+
+.complete-btn.completed {
+  background-color: #6c757d;
+}
+
+.complete-btn:hover {
+  background-color: #218838;
+}
+
+.complete-btn.completed:hover {
+  background-color: #5a6268;
+}
+
+/* Style for the step details */
+.step-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-top: 10px;
+}

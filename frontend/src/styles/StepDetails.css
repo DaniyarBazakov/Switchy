@@ -1,20 +1,34 @@
+/* StepDetails.css */
+.step-details-container {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
 .resource-list {
-  list-style-position: inside; /* Ensures the numbers are aligned with the content */
+  list-style-type: none;
   padding: 0;
-  margin: 0;
 }
 
 .resource-item {
+  background-color: #f1f1f1;
   margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 .resource-link {
-  color: rgb(222, 48, 48); /* Matches the text color of its parent */
-  text-decoration: none; /* Removes the underline */
-  cursor: pointer;
-  font-weight: bold; /* Optional: Makes the link more visually distinct */
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .resource-link:hover {
-  color: rgb(143, 99, 210); /* Optional: Changes color on hover */
+  text-decoration: underline;
+}
+
+.no-resources {
+  color: #888;
+  font-style: italic;
 }
