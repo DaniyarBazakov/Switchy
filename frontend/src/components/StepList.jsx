@@ -18,14 +18,17 @@ const StepList = ({ roadmapId, completedSteps, onStepCompletion }) => {
     <div className="step-list">
       {steps.map((step) => (
         <div className="step" key={step.step_id}>
-          <button onClick={() => handleStepClick(step.step_id)}>
+          <button
+            className="step-action-btn"
+            onClick={() => handleStepClick(step.step_id)}
+          >
             {step.title}
           </button>
           {activeStepId === step.step_id && (
             <div className="step-details-container">
               <StepDetails stepId={step.step_id} />
               <button
-                className={`complete-btn ${
+                className={`step-complete-btn ${
                   completedSteps[step.step_id] ? "completed" : ""
                 }`}
                 onClick={() => onStepCompletion(step.step_id)}

@@ -29,42 +29,54 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Hover effect */
 }
 
-.step button {
+/* Action button for each step */
+.step-action-btn {
   padding: 12px 18px;
-  background-color: #f04b4b;
+  background: linear-gradient(
+    135deg,
+    #f54b64,
+    #f78361
+  ); /* Gradient background */
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
   width: 100%; /* Button stretches to full width */
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-.step button:hover {
-  background-color: #f78361;
+/* Action button hover effect */
+.step-action-btn:hover {
+  background-color: #f78361; /* Light hover effect */
 }
 
-.complete-btn {
+/* Complete Button Style */
+.step-complete-btn {
   padding: 8px 12px;
-  background-color: #28a745;
+  background-color: #28a745; /* Green color */
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
   width: 100%;
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
 }
 
-.complete-btn.completed {
-  background-color: #6c757d;
+/* Complete button hover effect */
+.step-complete-btn:hover {
+  background-color: #218838; /* Darker green */
 }
 
-.complete-btn:hover {
-  background-color: #218838;
+/* Completed State */
+.step-complete-btn.completed {
+  background-color: #6c757d; /* Gray when completed */
 }
 
-.complete-btn.completed:hover {
-  background-color: #5a6268;
+/* Completed Hover Effect */
+.step-complete-btn.completed:hover {
+  background-color: #5a6268; /* Darker gray when hovered */
 }
 
 /* Style for the step details */
