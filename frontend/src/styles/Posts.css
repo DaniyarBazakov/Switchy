@@ -5,7 +5,7 @@ body {
   background-color: #f3f3f3;
 }
 
-/* Post Container */
+/* Post Container - Create Post */
 .post-container {
   padding: 40px;
   max-width: 600px;
@@ -16,7 +16,7 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* Toggle Button */
+/* Toggle Button - Create Post */
 .toggle-button {
   background: linear-gradient(135deg, #f54b64, #f78361);
   color: white;
@@ -28,33 +28,24 @@ body {
   width: 100%;
   max-width: 200px;
   transition: all 0.3s ease;
-  display: inline-block;
   height: 45px;
+  margin: 0 auto 20px auto;
 }
 
 .toggle-button:hover {
   background: linear-gradient(135deg, #f54b64, #f78361);
 }
 
-.toggle-button.open,
-.toggle-button.close {
-  width: 200px; /* Fixed width */
-  height: 45px; /* Fixed height */
-  padding: 10px;
-  font-size: 16px;
-}
-
 /* Collapsible Form */
 .collapsible-form {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-in; /* Faster opening */
+  transition: max-height 0.3s ease-in;
 }
 
 .collapsible-form.open {
   max-height: 600px;
   padding: 20px;
-  margin-left: 40px;
 }
 
 .collapsible-form.closing {
@@ -63,45 +54,7 @@ body {
   padding: 0;
 }
 
-.form-group {
-  margin-bottom: 1rem;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  display: block;
-  color: #333;
-}
-
-textarea,
-input {
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  resize: none;
-  box-sizing: border-box;
-}
-
-/* Submit Button */
-.submit-button {
-  background: linear-gradient(135deg, #f54b64, #f78361);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 16px;
-}
-
-.submit-button:hover {
-  background: linear-gradient(135deg, #f54b64, #f78361);
-}
-
-/* Posts Section */
+/* Recent Posts Section */
 .user-posts {
   padding: 40px;
   max-width: 700px;
@@ -111,19 +64,56 @@ input {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.user-posts h2 {
-  font-size: 28px;
-  color: #f54b64;
-  margin-bottom: 20px;
+/* Center the Recent Posts title and filter container */
+.user-posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
 }
 
+/* Style the Recent Posts title */
+.user-posts h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #f54b64;
+}
+
+/* Center and style the filter container */
+.filter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+/* Style the dropdown */
+.filter-container select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Style the label text */
+.filter-container label {
+  font-weight: bold;
+}
+
+/* Post Card */
 .post-card {
   background: #f9f9f9;
-  padding: 20px;
+  padding: 20px; /* Padding inside the post card */
   border-radius: 12px;
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Add padding around the content inside the post */
+  padding: 20px;
+  margin: 25px;
 }
 
 .post-card:hover {
@@ -200,14 +190,69 @@ input {
   color: #f78361;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .post-container,
-  .user-posts {
-    padding: 20px;
-  }
+/* Submit Button */
+.submit-button {
+  background: linear-gradient(135deg, #f54b64, #f78361);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
 
-  .toggle-button {
-    width: 100%;
-  }
+.submit-button:hover {
+  background: linear-gradient(135deg, #f54b64, #f78361);
+}
+
+/* Create Post Form */
+.collapsible-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Inputs */
+.collapsible-form input,
+.collapsible-form textarea,
+.collapsible-form select {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* Focused Input/Select */
+.collapsible-form input:focus,
+.collapsible-form textarea:focus,
+.collapsible-form select:focus {
+  border-color: #f54b64;
+  outline: none;
+}
+
+/* Submit Button */
+.collapsible-form button {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #f54b64, #f78361);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.collapsible-form button:hover {
+  background: linear-gradient(135deg, #f78361, #f54b64);
 }

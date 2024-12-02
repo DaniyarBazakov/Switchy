@@ -1,8 +1,6 @@
-import React,{useState} from 'react';
+import React, { useState } from "react";
 
-import '../styles/Modal.css';
-
-
+import "../styles/Modal.css";
 
 // Modal component
 const Modal = ({ resource, onClose }) => {
@@ -12,13 +10,15 @@ const Modal = ({ resource, onClose }) => {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <h2>{resource.title}</h2>
-        <p>{resource.description || 'No description available.'}</p>
+        <p>{resource.description || "No description available."}</p>
         <a href={resource.url} target="_blank" rel="noopener noreferrer">
           Visit resource
         </a>
-        <button className="close-modal" onClick={onClose}>Close</button>
+        <button className="close-modal" onClick={onClose}>
+          Close
+        </button>
       </div>
     </div>
   );
 };
- export default Modal;
+export default Modal;

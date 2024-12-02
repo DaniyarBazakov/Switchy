@@ -127,7 +127,7 @@ const PostForm = () => {
                   name="content"
                   value={formData.content}
                   onChange={handleChange}
-                  placeholder="Share your thoughts..."
+                  placeholder="Share your thoughts"
                   required
                 ></textarea>
               </div>
@@ -139,7 +139,7 @@ const PostForm = () => {
                   name="field"
                   value={formData.field}
                   onChange={handleChange}
-                  placeholder="Enter the related field (e.g., Tech, Design)"
+                  placeholder="Enter the field"
                   required
                 />
               </div>
@@ -151,24 +151,26 @@ const PostForm = () => {
         )}
       </div>
 
-      <div className="filter-container">
-        <label htmlFor="fieldFilter">Filter by Field:</label>
-        <select
-          id="fieldFilter"
-          value={selectedField}
-          onChange={handleFieldFilterChange}
-        >
-          <option value="">All Fields</option>
-          {fields.map((field, index) => (
-            <option key={index} value={field}>
-              {field}
-            </option>
-          ))}
-        </select>
-      </div>
-
       <section className="user-posts">
         <h2>Recent Posts</h2>
+
+        {/* Filter Dropdown */}
+        <div className="filter-container">
+          <label htmlFor="fieldFilter">Filter:</label>
+          <select
+            id="fieldFilter"
+            value={selectedField}
+            onChange={handleFieldFilterChange}
+          >
+            <option value="">All Fields</option>
+            {fields.map((field, index) => (
+              <option key={index} value={field}>
+                {field}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <div className="posts">
           {sortedPosts.length > 0 ? (
             sortedPosts.map((post) => (
