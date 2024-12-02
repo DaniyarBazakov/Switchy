@@ -65,7 +65,7 @@ const UserProfile = () => {
           </div>
         </div>
 
-        <div className="user-posts">
+        <div className="user-posts2">
           <h2>Recent Posts</h2>
           <div className="posts">
             {posts?.length > 0 ? (

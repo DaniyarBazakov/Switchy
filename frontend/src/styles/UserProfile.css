@@ -19,7 +19,7 @@ html, body {
 }
 
 .user-profile,
-.user-posts {
+.user-posts2 {
   flex: 1;
   
   border-radius: 20px;
@@ -34,7 +34,7 @@ html, body {
 
 /* Ensure the containers stretch to fill available height and width */
 .user-profile,
-.user-posts {
+.user-posts2 {
   height: 100%; /* Stretch to fill the height of the parent */
 }
 
