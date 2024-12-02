@@ -282,7 +282,7 @@ const Signup = () => {
               </label>
               <label>
                 Tell us about your experience (e.g., how did you get into that field, pros and cons, etc.)
-                <textarea
+                <input
                   name="experience"
                   placeholder="Enter details about your experience"
                   value={formData.experience}
@@ -291,7 +291,7 @@ const Signup = () => {
               </label>
               <label>
                 Post Content
-                <textarea
+                <input
                   name="postContent"
                   placeholder="Write a post to share with others"
                   value={formData.postContent}
