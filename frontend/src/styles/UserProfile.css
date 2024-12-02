@@ -1,29 +1,59 @@
 /* UserProfile.css */
-.user-profile {
-  margin: 40px auto;
-  padding: 30px;
-  width: 900px;
-  background-color: #f9f9f9;
-  border-radius: 20px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-  font-family: "Raleway", sans-serif;
-  color: #333;
-}
-.user-posts{
-  margin: 40px auto;
-  padding: 30px;
-  width: 900px;
-  background-color: #f9f9f9;
-  border-radius: 20px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-  font-family: "Raleway", sans-serif;
-  color: #333
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%; /* Ensure the body covers the full width */
+  box-sizing: border-box;
 }
 
 .profile {
-  display:flex;
+  display: flex;
   justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  height: 100vh;
+  width: 100vw;
+  padding: 60px;
+  box-sizing: border-box;
 }
+
+.user-profile,
+.user-posts {
+  flex: 1;
+  
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100%; /* Stretch containers */
+}
+
+/* Ensure the containers stretch to fill available height and width */
+.user-profile,
+.user-posts {
+  height: 100%; /* Stretch to fill the height of the parent */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile {
+    flex-direction: column; /* Stack containers vertically on smaller screens */
+    gap: 20px;
+    height: auto; /* Allow height to adjust naturally on small screens */
+    width: 100%; /* Maintain full width */
+  }
+
+  .user-profile,
+  .user-posts {
+    width: 100%; /* Full width in stacked layout */
+    height: auto; /* Adjust height to content in stacked layout */
+  }
+}
+
 /* Profile Header */
 .profile-header {
   text-align: center;
@@ -88,6 +118,25 @@
 
 .profile-section a:hover {
   text-decoration: underline;
+}
+.post-card {
+  
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 /* Responsive Design */
